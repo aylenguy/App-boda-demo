@@ -232,138 +232,146 @@ const calendarDays = [
       </section>
 
       {/* ITINERARIO */}
-      <motion.section
-        initial={{ opacity: 0, y: 18 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        viewport={{ once: true }}
-        className="bg-white px-6 py-20 md:py-24"
-      >
-        <div className="mx-auto max-w-4xl">
-          <p className="text-center text-[10px] uppercase tracking-[0.45em] text-[#6e7c72] md:text-[11px]">
-            Itinerario
-          </p>
+     {/* ITINERARIO */}
+<motion.section
+  initial={{ opacity: 0, y: 18 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, ease: "easeOut" }}
+  viewport={{ once: true }}
+  className="bg-white px-6 py-20 md:py-24"
+>
+  <div className="mx-auto max-w-4xl">
+    <p className="text-center text-[10px] uppercase tracking-[0.45em] text-[#6e7c72] md:text-[11px]">
+      Itinerario
+    </p>
 
-          <h2 className="mt-4 text-center text-[2rem] font-light tracking-[0.06em] text-[#4f5c54] md:text-[2.7rem]">
-            Cómo será el día
-          </h2>
-{/* CALENDARIO */}
-<div className="mt-14 flex justify-center">
-  <div className="w-full max-w-md rounded-[30px] border border-[#cfd6d1] bg-white p-6 shadow-sm">
+    <h2 className="mt-4 text-center text-[2rem] font-light tracking-[0.06em] text-[#4f5c54] md:text-[2.7rem]">
+      Cómo será el día
+    </h2>
 
-    <h3 className="text-center text-sm uppercase tracking-[0.3em] text-[#8f9a93] mb-4">
-      Febrero 2027
-    </h3>
+    {/* CALENDARIO */}
+    <div className="mt-14 flex justify-center">
+      <div className="w-full max-w-md rounded-[30px] border border-[#cfd6d1] bg-white p-6 shadow-sm">
 
-    {/* DÍAS */}
-    <div className="grid grid-cols-7 text-xs text-[#8f9a93] mb-2">
-      {days.map((d, i) => (
-        <div key={i} className="text-center">{d}</div>
-      ))}
-    </div>
+        <h3 className="text-center text-sm uppercase tracking-[0.3em] text-[#8f9a93] mb-4">
+          Febrero 2027
+        </h3>
 
-    {/* NÚMEROS */}
-    <div className="grid grid-cols-7 gap-y-2 text-[#4f5c54]">
-      {calendarDays.map((day, i) => (
-        <div key={i} className="flex justify-center items-center h-10">
-          {day === 4 ? ( // 👈 tu fecha real
-            <div className="relative flex items-center justify-center">
-             <div className="relative flex items-center justify-center">
-  <Heart
-    className="absolute text-[#4f5c54]"
-    size={44}
-    fill="#4f5c54"
-  />
-  <span className="relative text-white text-sm font-medium">
-    {day}
-  </span>
-</div>
-
-             
+        {/* DÍAS */}
+        <div className="grid grid-cols-7 text-xs text-[#8f9a93] mb-2">
+          {days.map((d, i) => (
+            <div key={i} className="text-center">
+              {d}
             </div>
-          ) : (
-            <span className="text-sm">{day}</span>
-          )}
+          ))}
         </div>
-      ))}
-    </div>
-  </div>
-</div>
 
-
-          <div className="mx-auto mt-6 h-px w-16 bg-[#cfd6d1]" />
-
-          <div className="mt-14 space-y-6 md:mt-16 md:space-y-8">
-            <div className="rounded-[30px] border border-[#cfd6d1] bg-white/90 p-6 shadow-sm md:p-8">
-              <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-10">
-                <div className="border-b border-[#cfd6d1] pb-4 text-left md:w-[180px] md:border-b-0 md:border-r md:pb-0 md:pr-8">
-                  <p className="text-[10px] uppercase tracking-[0.35em] text-[#6e7c72] md:text-[11px]">
-                    Ceremonia
-                  </p>
-                  <h3 className="mt-3 text-4xl font-light leading-none text-[#4f5c54] md:text-5xl">
-                    18:30
-                  </h3>
-                  <p className="mt-2 text-xs uppercase tracking-[0.28em] text-[#8f9a93]">
-                    Horas
-                  </p>
+        {/* NÚMEROS */}
+        <div className="grid grid-cols-7 gap-y-2 text-[#4f5c54]">
+          {calendarDays.map((day, i) => (
+            <div key={i} className="flex justify-center items-center h-10">
+              
+              {day === 4 ? (
+                <div className="relative flex items-center justify-center w-10 h-10">
+                  <Heart
+                    className="absolute text-[#4f5c54]"
+                    size={34}
+                    fill="#4f5c54"
+                    strokeWidth={1}
+                  />
+                  <span className="relative text-white text-xs font-semibold mt-[2px]">
+                    {day}
+                  </span>
                 </div>
+              ) : (
+                <span className="text-sm">{day}</span>
+              )}
 
-                <div className="text-left">
-                  <p className="text-xl font-light text-[#4f5c54]">
-                    Capilla San Gabriel
-                  </p>
-                  <p className="mt-2 text-sm leading-7 text-[#6e7c72]">
-                    Rosario, Santa Fe
-                  </p>
-
-                  <a
-                    href="https://www.google.com/maps"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-5 inline-block border-b border-[#4f5c54] text-xs uppercase tracking-[0.22em] text-[#4f5c54] transition hover:opacity-70"
-                  >
-                    Ver ubicación
-                  </a>
-                </div>
-              </div>
             </div>
+          ))}
+        </div>
 
-            <div className="rounded-[30px] border border-[#cfd6d1] bg-white/90 p-6 shadow-sm md:p-8">
-              <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-10">
-                <div className="border-b border-[#cfd6d1] pb-4 text-left md:w-[180px] md:border-b-0 md:border-r md:pb-0 md:pr-8">
-                  <p className="text-[10px] uppercase tracking-[0.35em] text-[#6e7c72] md:text-[11px]">
-                    Celebración
-                  </p>
-                  <h3 className="mt-3 text-4xl font-light leading-none text-[#4f5c54] md:text-5xl">
-                    21:00
-                  </h3>
-                  <p className="mt-2 text-xs uppercase tracking-[0.28em] text-[#8f9a93]">
-                    Horas
-                  </p>
-                </div>
+      </div> {/* ← cierre del card calendario */}
+    </div> {/* ← cierre del contenedor centrado */}
 
-                <div className="text-left">
-                  <p className="text-xl font-light text-[#4f5c54]">
-                    Salón Magnolia
-                  </p>
-                  <p className="mt-2 text-sm leading-7 text-[#6e7c72]">
-                    Funes, Santa Fe
-                  </p>
+    <div className="mx-auto mt-6 h-px w-16 bg-[#cfd6d1]" />
 
-                  <a
-                    href="https://www.google.com/maps"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-5 inline-block border-b border-[#4f5c54] text-xs uppercase tracking-[0.22em] text-[#4f5c54] transition hover:opacity-70"
-                  >
-                    Ver ubicación
-                  </a>
-                </div>
-              </div>
-            </div>
+    {/* TARJETAS */}
+    <div className="mt-14 space-y-6 md:mt-16 md:space-y-8">
+
+      {/* CEREMONIA */}
+      <div className="rounded-[30px] border border-[#cfd6d1] bg-white/90 p-6 shadow-sm md:p-8">
+        <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-10">
+          <div className="border-b border-[#cfd6d1] pb-4 text-left md:w-[180px] md:border-b-0 md:border-r md:pb-0 md:pr-8">
+            <p className="text-[10px] uppercase tracking-[0.35em] text-[#6e7c72] md:text-[11px]">
+              Ceremonia
+            </p>
+            <h3 className="mt-3 text-4xl font-light leading-none text-[#4f5c54] md:text-5xl">
+              18:30
+            </h3>
+            <p className="mt-2 text-xs uppercase tracking-[0.28em] text-[#8f9a93]">
+              Horas
+            </p>
+          </div>
+
+          <div className="text-left">
+            <p className="text-xl font-light text-[#4f5c54]">
+              Capilla San Gabriel
+            </p>
+            <p className="mt-2 text-sm leading-7 text-[#6e7c72]">
+              Rosario, Santa Fe
+            </p>
+
+            <a
+              href="https://www.google.com/maps"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-5 inline-block border-b border-[#4f5c54] text-xs uppercase tracking-[0.22em] text-[#4f5c54] transition hover:opacity-70"
+            >
+              Ver ubicación
+            </a>
           </div>
         </div>
-      </motion.section>
+      </div>
+
+      {/* CELEBRACIÓN */}
+      <div className="rounded-[30px] border border-[#cfd6d1] bg-white/90 p-6 shadow-sm md:p-8">
+        <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-10">
+          <div className="border-b border-[#cfd6d1] pb-4 text-left md:w-[180px] md:border-b-0 md:border-r md:pb-0 md:pr-8">
+            <p className="text-[10px] uppercase tracking-[0.35em] text-[#6e7c72] md:text-[11px]">
+              Celebración
+            </p>
+            <h3 className="mt-3 text-4xl font-light leading-none text-[#4f5c54] md:text-5xl">
+              21:00
+            </h3>
+            <p className="mt-2 text-xs uppercase tracking-[0.28em] text-[#8f9a93]">
+              Horas
+            </p>
+          </div>
+
+          <div className="text-left">
+            <p className="text-xl font-light text-[#4f5c54]">
+              Salón Magnolia
+            </p>
+            <p className="mt-2 text-sm leading-7 text-[#6e7c72]">
+              Funes, Santa Fe
+            </p>
+
+            <a
+              href="https://www.google.com/maps"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-5 inline-block border-b border-[#4f5c54] text-xs uppercase tracking-[0.22em] text-[#4f5c54] transition hover:opacity-70"
+            >
+              Ver ubicación
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</motion.section>
 
       {/* FRASE */}
       <section className="bg-[#e9f1ed] px-6 py-20 text-center md:py-24">
