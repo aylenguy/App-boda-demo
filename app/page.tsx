@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import TriviaSection from "./triviasection";
 import {
   CalendarDays,
   Heart,
@@ -113,100 +114,100 @@ const calendarDays = [
   
   return (
     <main className="min-h-screen bg-white text-[#2a2a2a]">
-      {/* HERO */}
-      <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-white px-6 py-20 text-center">
-        <motion.img
-          src="/image/hero.png"
-          alt="Sofía y Mateo"
-          initial={{ scale: 1.08, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-          className="absolute inset-0 h-full w-full object-cover object-center"
-        />
+     {/* HERO */}
+<section className="relative flex min-h-[78vh] items-center justify-center overflow-hidden bg-white px-6 py-16 text-center sm:min-h-[82vh] md:min-h-[72vh] md:py-20">
+  <motion.img
+    src="/image/hero.png"
+    alt="Sofía y Mateo"
+    initial={{ scale: 1.08, opacity: 0 }}
+    animate={{ scale: 1, opacity: 1 }}
+    transition={{ duration: 1.2, ease: "easeOut" }}
+    className="absolute inset-0 h-full w-full object-cover object-center"
+  />
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="absolute inset-0 bg-white/25"
-        />
+  <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 1 }}
+    className="absolute inset-0 bg-white/25"
+  />
 
-        <motion.div
-          initial="hidden"
-          animate="show"
-          variants={{
-            hidden: {},
-            show: {
-              transition: {
-                staggerChildren: 0.14,
-                delayChildren: 0.2,
-              },
-            },
-          }}
-          className="relative z-10 mx-auto flex max-w-2xl flex-col items-center"
-        >
-          <motion.p
-            variants={{
-              hidden: { opacity: 0, y: 18 },
-              show: { opacity: 1, y: 0 },
-            }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="mb-6 text-[11px] uppercase tracking-[0.45em] text-[#8a847d] md:text-sm"
-          >
-            Nuestra boda
-          </motion.p>
+  <motion.div
+    initial="hidden"
+    animate="show"
+    variants={{
+      hidden: {},
+      show: {
+        transition: {
+          staggerChildren: 0.14,
+          delayChildren: 0.2,
+        },
+      },
+    }}
+    className="relative z-10 mx-auto flex max-w-2xl flex-col items-center"
+  >
+    <motion.p
+      variants={{
+        hidden: { opacity: 0, y: 18 },
+        show: { opacity: 1, y: 0 },
+      }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+      className="mb-5 text-[10px] uppercase tracking-[0.38em] text-[#8a847d] md:mb-6 md:text-sm"
+    >
+      Nuestra boda
+    </motion.p>
 
-          <h1 className="text-center">
-            <motion.span
-              variants={{
-                hidden: { opacity: 0, y: 24 },
-                show: { opacity: 1, y: 0 },
-              }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className={`${miFuente.className} block text-5xl font-light leading-tight text-[#6f6a64] md:text-7xl xl:text-[6rem]`}
-            >
-              Sofía
-            </motion.span>
+    <h1 className="text-center">
+      <motion.span
+        variants={{
+          hidden: { opacity: 0, y: 24 },
+          show: { opacity: 1, y: 0 },
+        }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className={`${miFuente.className} block text-4xl font-light leading-tight text-[#6f6a64] sm:text-5xl md:text-7xl xl:text-[6rem]`}
+      >
+        Sofía
+      </motion.span>
 
-            <motion.span
-              variants={{
-                hidden: { opacity: 0 },
-                show: { opacity: 1 },
-              }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              className="block text-xl italic text-[#9a948d] md:text-2xl"
-            >
-              &
-            </motion.span>
+      <motion.span
+        variants={{
+          hidden: { opacity: 0 },
+          show: { opacity: 1 },
+        }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="block text-lg italic text-[#9a948d] md:text-2xl"
+      >
+        &
+      </motion.span>
 
-            <motion.span
-              variants={{
-                hidden: { opacity: 0, y: 24 },
-                show: { opacity: 1, y: 0 },
-              }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className={`${miFuente.className} block text-5xl font-light leading-tight text-[#6f6a64] md:text-7xl xl:text-[6rem]`}
-            >
-              Mateo
-            </motion.span>
-          </h1>
+      <motion.span
+        variants={{
+          hidden: { opacity: 0, y: 24 },
+          show: { opacity: 1, y: 0 },
+        }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className={`${miFuente.className} block text-4xl font-light leading-tight text-[#6f6a64] sm:text-5xl md:text-7xl xl:text-[6rem]`}
+      >
+        Mateo
+      </motion.span>
+    </h1>
 
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, y: 18 },
-              show: { opacity: 1, y: 0 },
-            }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="mt-10 flex items-center gap-4 md:mt-12"
-          >
-            <div className="h-px w-10 bg-[#d1ccc4] md:w-16" />
-            <p className="text-sm uppercase tracking-[0.35em] text-[#8a847d] md:text-base">
-              4 · 02 · 2027
-            </p>
-            <div className="h-px w-10 bg-[#d1ccc4] md:w-16" />
-          </motion.div>
-        </motion.div>
-      </section>
+    <motion.div
+      variants={{
+        hidden: { opacity: 0, y: 18 },
+        show: { opacity: 1, y: 0 },
+      }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+      className="mt-8 flex items-center gap-3 md:mt-10 md:gap-4"
+    >
+      <div className="h-px w-8 bg-[#d1ccc4] md:w-16" />
+      <p className="text-xs uppercase tracking-[0.28em] text-[#8a847d] md:text-base md:tracking-[0.35em]">
+        4 · 02 · 2027
+      </p>
+      <div className="h-px w-8 bg-[#d1ccc4] md:w-16" />
+    </motion.div>
+  </motion.div>
+</section>
 
       {/* COUNTDOWN */}
       <section className="bg-[#e9f1ed] px-6 py-20 text-center md:py-24">
@@ -214,21 +215,21 @@ const calendarDays = [
           Falta para nuestro gran día
         </p>
 
-        <div className="mx-auto mt-12 grid max-w-4xl grid-cols-2 gap-6 md:grid-cols-4">
-          {countdownItems.map((item) => (
-            <div key={item.key} className="flex flex-col items-center">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full border border-[#d6d0c8] bg-white shadow-sm md:h-24 md:w-24">
-                <p className="text-3xl font-light text-[#5f5a55] md:text-4xl">
-                  {timeLeft ? timeLeft[item.key] : "0"}
-                </p>
-              </div>
+       <div className="mx-auto mt-10 grid max-w-4xl grid-cols-4 gap-2 sm:gap-4 md:mt-12 md:gap-6">
+  {countdownItems.map((item) => (
+    <div key={item.key} className="flex flex-col items-center">
+      <div className="flex h-[68px] w-[68px] items-center justify-center rounded-full border border-[#d6d0c8] bg-white shadow-sm sm:h-20 sm:w-20 md:h-24 md:w-24">
+        <p className="text-2xl font-light text-[#5f5a55] sm:text-3xl md:text-4xl">
+          {timeLeft ? timeLeft[item.key] : "0"}
+        </p>
+      </div>
 
-              <p className="mt-4 text-[10px] uppercase tracking-[0.3em] text-[#8a847d] md:text-[11px]">
-                {item.label}
-              </p>
-            </div>
-          ))}
-        </div>
+      <p className="mt-3 text-[9px] uppercase tracking-[0.18em] text-[#8a847d] sm:mt-4 sm:text-[10px] md:text-[11px] md:tracking-[0.3em]">
+        {item.label}
+      </p>
+    </div>
+  ))}
+</div>
       </section>
 
       {/* ITINERARIO */}
@@ -300,74 +301,78 @@ const calendarDays = [
     <div className="mt-14 space-y-6 md:mt-16 md:space-y-8">
 
       {/* CEREMONIA */}
-      <div className="rounded-[30px] border border-[#cfd6d1] bg-white/90 p-6 shadow-sm md:p-8">
-        <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-10">
-          <div className="border-b border-[#cfd6d1] pb-4 text-left md:w-[180px] md:border-b-0 md:border-r md:pb-0 md:pr-8">
-            <p className="text-[10px] uppercase tracking-[0.35em] text-[#6e7c72] md:text-[11px]">
-              Ceremonia
-            </p>
-            <h3 className="mt-3 text-4xl font-light leading-none text-[#4f5c54] md:text-5xl">
-              18:30
-            </h3>
-            <p className="mt-2 text-xs uppercase tracking-[0.28em] text-[#8f9a93]">
-              Horas
-            </p>
-          </div>
+      <div className="rounded-[28px] border border-[#cfd6d1] bg-[#fbfcfb] p-5 shadow-sm sm:p-6 md:rounded-[30px] md:p-8">
+  <div className="flex flex-col gap-5 md:flex-row md:items-center md:gap-10">
+    <div className="rounded-[22px] bg-[#f4f8f6] px-5 py-4 text-left md:w-[190px] md:shrink-0 md:bg-transparent md:px-0 md:py-0">
+      <p className="text-[10px] uppercase tracking-[0.3em] text-[#6e7c72] md:text-[11px]">
+        Ceremonia
+      </p>
+      <h3 className="mt-2 text-[2.2rem] font-light leading-none text-[#4f5c54] md:mt-3 md:text-5xl">
+        18:30
+      </h3>
+      <p className="mt-2 text-[11px] uppercase tracking-[0.22em] text-[#8f9a93]">
+        Horas
+      </p>
+    </div>
 
-          <div className="text-left">
-            <p className="text-xl font-light text-[#4f5c54]">
-              Capilla San Gabriel
-            </p>
-            <p className="mt-2 text-sm leading-7 text-[#6e7c72]">
-              Rosario, Santa Fe
-            </p>
+    <div className="h-px w-full bg-[#d9e1dc] md:hidden" />
 
-            <a
-              href="https://www.google.com/maps"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-5 inline-block border-b border-[#4f5c54] text-xs uppercase tracking-[0.22em] text-[#4f5c54] transition hover:opacity-70"
-            >
-              Ver ubicación
-            </a>
-          </div>
-        </div>
-      </div>
+    <div className="text-left">
+      <p className="text-lg font-light text-[#4f5c54] sm:text-xl">
+        Capilla San Gabriel
+      </p>
+      <p className="mt-2 text-sm leading-6 text-[#6e7c72] sm:leading-7">
+        Rosario, Santa Fe
+      </p>
+
+      <a
+        href="https://www.google.com/maps"
+        target="_blank"
+        rel="noreferrer"
+        className="mt-4 inline-flex rounded-full border border-[#cfd6d1] px-4 py-2 text-[10px] uppercase tracking-[0.18em] text-[#4f5c54] transition hover:bg-[#4f5c54] hover:text-white md:mt-5"
+      >
+        Ver ubicación
+      </a>
+    </div>
+  </div>
+</div>
 
       {/* CELEBRACIÓN */}
-      <div className="rounded-[30px] border border-[#cfd6d1] bg-white/90 p-6 shadow-sm md:p-8">
-        <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-10">
-          <div className="border-b border-[#cfd6d1] pb-4 text-left md:w-[180px] md:border-b-0 md:border-r md:pb-0 md:pr-8">
-            <p className="text-[10px] uppercase tracking-[0.35em] text-[#6e7c72] md:text-[11px]">
-              Celebración
-            </p>
-            <h3 className="mt-3 text-4xl font-light leading-none text-[#4f5c54] md:text-5xl">
-              21:00
-            </h3>
-            <p className="mt-2 text-xs uppercase tracking-[0.28em] text-[#8f9a93]">
-              Horas
-            </p>
-          </div>
+      <div className="rounded-[28px] border border-[#cfd6d1] bg-[#fbfcfb] p-5 shadow-sm sm:p-6 md:rounded-[30px] md:p-8">
+  <div className="flex flex-col gap-5 md:flex-row md:items-center md:gap-10">
+    <div className="rounded-[22px] bg-[#f4f8f6] px-5 py-4 text-left md:w-[190px] md:shrink-0 md:bg-transparent md:px-0 md:py-0">
+      <p className="text-[10px] uppercase tracking-[0.3em] text-[#6e7c72] md:text-[11px]">
+        Celebración
+      </p>
+      <h3 className="mt-2 text-[2.2rem] font-light leading-none text-[#4f5c54] md:mt-3 md:text-5xl">
+        21:00
+      </h3>
+      <p className="mt-2 text-[11px] uppercase tracking-[0.22em] text-[#8f9a93]">
+        Horas
+      </p>
+    </div>
 
-          <div className="text-left">
-            <p className="text-xl font-light text-[#4f5c54]">
-              Salón Magnolia
-            </p>
-            <p className="mt-2 text-sm leading-7 text-[#6e7c72]">
-              Funes, Santa Fe
-            </p>
+    <div className="h-px w-full bg-[#d9e1dc] md:hidden" />
 
-            <a
-              href="https://www.google.com/maps"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-5 inline-block border-b border-[#4f5c54] text-xs uppercase tracking-[0.22em] text-[#4f5c54] transition hover:opacity-70"
-            >
-              Ver ubicación
-            </a>
-          </div>
-        </div>
-      </div>
+    <div className="text-left">
+      <p className="text-lg font-light text-[#4f5c54] sm:text-xl">
+        Salón Magnolia
+      </p>
+      <p className="mt-2 text-sm leading-6 text-[#6e7c72] sm:leading-7">
+        Funes, Santa Fe
+      </p>
+
+      <a
+        href="https://www.google.com/maps"
+        target="_blank"
+        rel="noreferrer"
+        className="mt-4 inline-flex rounded-full border border-[#cfd6d1] px-4 py-2 text-[10px] uppercase tracking-[0.18em] text-[#4f5c54] transition hover:bg-[#4f5c54] hover:text-white md:mt-5"
+      >
+        Ver ubicación
+      </a>
+    </div>
+  </div>
+</div>
 
     </div>
   </div>
@@ -514,7 +519,7 @@ const calendarDays = [
                 <img
                   src={src}
                   alt={`Sofía y Mateo ${index + 1}`}
-                  className="h-56 w-full object-cover transition duration-500 hover:scale-105"
+                  className="h-40 w-full object-cover transition duration-500 hover:scale-105 sm:h-48 md:h-56"
                 />
               </div>
             ))}
@@ -522,7 +527,7 @@ const calendarDays = [
         </div>
       </section>
 
-      
+
 
       {/* REGALOS */}
       <motion.section
@@ -551,8 +556,7 @@ const calendarDays = [
 
           <button
             onClick={() => setOpenCBU(true)}
-            className="mt-10 inline-block rounded-full bg-[#4f5c54] px-10 py-4 text-sm uppercase tracking-[0.25em] text-white shadow-sm transition hover:bg-[#3f4b44]"
-          >
+className="mt-10 inline-flex min-h-[48px] items-center justify-center rounded-full bg-[#4f5c54] px-7 py-3 text-[11px] uppercase tracking-[0.18em] text-white shadow-sm transition hover:bg-[#3f4b44] sm:px-10 sm:py-4 sm:text-sm sm:tracking-[0.25em]"          >
             Hacer un regalo
           </button>
 
@@ -591,165 +595,12 @@ const calendarDays = [
       </section>
 
 
+<section>
+  <TriviaSection />
+</section>
 
-      {/* TRIVIA 
-<motion.section
-  initial={{ opacity: 0, y: 18 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6, ease: "easeOut" }}
-  viewport={{ once: true }}
-  className="bg-white px-6 py-20 md:py-24"
->
-  <div className="mx-auto max-w-4xl">
-    <p className="text-center text-[11px] uppercase tracking-[0.45em] text-[#6e7c72]">
-      Un pequeño juego
-    </p>
-
-    <h2 className="mt-4 text-center text-[2rem] font-light tracking-[0.06em] text-[#4f5c54] md:text-[2.7rem]">
-      ¿Cuánto nos conocés?
-    </h2>
-
-    <div className="mx-auto mt-6 h-px w-16 bg-[#cfd6d1]" />
-
-    <p className="mx-auto mt-6 max-w-2xl text-center text-sm leading-7 text-[#6e7c72] md:text-base">
-      Antes del gran día, te invitamos a descubrir cuánto sabés sobre nuestra historia.
-    </p>
-
-    <div className="mt-12 space-y-6">
-      {/* PREGUNTA 1 *
-      <div className="rounded-[30px] border border-[#cfd6d1] bg-[#f7faf8] p-6 shadow-sm md:p-8">
-        <p className="text-[10px] uppercase tracking-[0.35em] text-[#8f9a93] md:text-[11px]">
-          Pregunta 1
-        </p>
-
-        <h3 className="mt-2 text-xl font-light text-[#4f5c54] md:text-2xl">
-          ¿Dónde nos conocimos?
-        </h3>
-
-        <div className="mt-6 grid gap-3 md:grid-cols-3">
-          {["En una fiesta", "En la facultad", "En un viaje"].map((option) => {
-            const selected = quizAnswers.q1 === option;
-            const correct = option === "En la facultad";
-
-            return (
-              <button
-                key={option}
-                onClick={() =>
-                  setQuizAnswers((prev) => ({ ...prev, q1: option }))
-                }
-                className={`rounded-full border px-5 py-3 text-sm transition ${
-                  selected
-                    ? correct
-                      ? "border-[#6e7c72] bg-[#e9f1ed] text-[#4f5c54]"
-                      : "border-[#d8cfc7] bg-[#f7f3ef] text-[#7a746c]"
-                    : "border-[#cfd6d1] bg-white text-[#4f5c54] hover:bg-[#f4f8f6]"
-                }`}
-              >
-                {option}
-              </button>
-            );
-          })}
-        </div>
-
-        {quizAnswers.q1 && (
-          <p className="mt-4 text-sm text-[#6e7c72]">
-            {quizAnswers.q1 === "En la facultad"
-              ? "✨ Correcto"
-              : "Casi... la respuesta correcta es: En la facultad"}
-          </p>
-        )}
-      </div>
-
-      {/* PREGUNTA 2 *
-      <div className="rounded-[30px] border border-[#cfd6d1] bg-[#f7faf8] p-6 shadow-sm md:p-8">
-        <p className="text-[10px] uppercase tracking-[0.35em] text-[#8f9a93] md:text-[11px]">
-          Pregunta 2
-        </p>
-
-        <h3 className="mt-2 text-xl font-light text-[#4f5c54] md:text-2xl">
-          ¿Quién dijo “te amo” primero?
-        </h3>
-
-        <div className="mt-6 grid gap-3 md:grid-cols-3">
-          {["Sofía", "Mateo", "Los dos al mismo tiempo"].map((option) => {
-            const selected = quizAnswers.q2 === option;
-            const correct = option === "Mateo";
-
-            return (
-              <button
-                key={option}
-                onClick={() =>
-                  setQuizAnswers((prev) => ({ ...prev, q2: option }))
-                }
-                className={`rounded-full border px-5 py-3 text-sm transition ${
-                  selected
-                    ? correct
-                      ? "border-[#6e7c72] bg-[#e9f1ed] text-[#4f5c54]"
-                      : "border-[#d8cfc7] bg-[#f7f3ef] text-[#7a746c]"
-                    : "border-[#cfd6d1] bg-white text-[#4f5c54] hover:bg-[#f4f8f6]"
-                }`}
-              >
-                {option}
-              </button>
-            );
-          })}
-        </div>
-
-        {quizAnswers.q2 && (
-          <p className="mt-4 text-sm text-[#6e7c72]">
-            {quizAnswers.q2 === "Mateo"
-              ? "✨ Correcto"
-              : "Casi... la respuesta correcta es: Mateo"}
-          </p>
-        )}
-      </div>
-
-      {/* PREGUNTA 3 *
-      <div className="rounded-[30px] border border-[#cfd6d1] bg-[#f7faf8] p-6 shadow-sm md:p-8">
-        <p className="text-[10px] uppercase tracking-[0.35em] text-[#8f9a93] md:text-[11px]">
-          Pregunta 3
-        </p>
-
-        <h3 className="mt-2 text-xl font-light text-[#4f5c54] md:text-2xl">
-          ¿Cuál fue nuestro primer viaje juntos?
-        </h3>
-
-        <div className="mt-6 grid gap-3 md:grid-cols-3">
-          {["Bariloche", "Mendoza", "Mar del Plata"].map((option) => {
-            const selected = quizAnswers.q3 === option;
-            const correct = option === "Mendoza";
-
-            return (
-              <button
-                key={option}
-                onClick={() =>
-                  setQuizAnswers((prev) => ({ ...prev, q3: option }))
-                }
-                className={`rounded-full border px-5 py-3 text-sm transition ${
-                  selected
-                    ? correct
-                      ? "border-[#6e7c72] bg-[#e9f1ed] text-[#4f5c54]"
-                      : "border-[#d8cfc7] bg-[#f7f3ef] text-[#7a746c]"
-                    : "border-[#cfd6d1] bg-white text-[#4f5c54] hover:bg-[#f4f8f6]"
-                }`}
-              >
-                {option}
-              </button>
-            );
-          })}
-        </div>
-
-        {quizAnswers.q3 && (
-          <p className="mt-4 text-sm text-[#6e7c72]">
-            {quizAnswers.q3 === "Mendoza"
-              ? "✨ Correcto"
-              : "Casi... la respuesta correcta es: Mendoza"}
-          </p>
-        )}
-      </div>
-    </div>
-  </div>
-</motion.section>
+      
+ 
 
 {/* MÚSICA */}
 <motion.section
@@ -779,8 +630,7 @@ const calendarDays = [
       href="https://forms.gle/"
       target="_blank"
       rel="noreferrer"
-      className="mt-10 inline-block rounded-full bg-[#4f5c54] px-10 py-4 text-sm uppercase tracking-[0.25em] text-white shadow-sm transition hover:bg-[#3f4b44]"
-    >
+className="mt-10 inline-flex min-h-[48px] items-center justify-center rounded-full bg-[#4f5c54] px-7 py-3 text-[11px] uppercase tracking-[0.18em] text-white shadow-sm transition hover:bg-[#3f4b44] sm:px-10 sm:py-4 sm:text-sm sm:tracking-[0.25em]"    >
       Sugerir canción
     </a>
   </div>
@@ -814,8 +664,7 @@ const calendarDays = [
             href="https://drive.google.com/"
             target="_blank"
             rel="noreferrer"
-            className="mt-10 inline-block rounded-full bg-[#4f5c54] px-10 py-4 text-sm uppercase tracking-[0.25em] text-white shadow-sm transition hover:bg-[#3f4b44]"
-          >
+className="mt-10 inline-flex min-h-[48px] items-center justify-center rounded-full bg-[#4f5c54] px-7 py-3 text-[11px] uppercase tracking-[0.18em] text-white shadow-sm transition hover:bg-[#3f4b44] sm:px-10 sm:py-4 sm:text-sm sm:tracking-[0.25em]"          >
             Ir al álbum
           </a>
         </div>
