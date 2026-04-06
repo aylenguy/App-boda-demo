@@ -673,7 +673,7 @@ className="mt-10 inline-flex min-h-[48px] items-center justify-center rounded-fu
       {/* CIERRE */}
       <section className="bg-[#cfd6d1] py-16 text-center">
         <p className="text-lg font-light text-[#2a2a2a]">
-          Gracias por acompañarnos en este momento tan importante
+          ¡Gracias por acompañarnos en este momento tan importante!
         </p>
       </section>
 
